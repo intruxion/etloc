@@ -11,7 +11,7 @@
 	echo "<br/>";
 	//foreach($userdetail as $row) echo $row['Nama'];
 	echo $this->session->userdata('session_Nama');
-	?></strong> </td><td><a href="http://localhost/etloc/index.php/newUser">Pengguna Baharu</td></tr>
+	?></strong> </td><td><a href="http://localhost/etloc/index.php/newUser">Pengguna Baharu</</td></tr>
     </table>    
     </td></tr>
     <tr><td bgcolor='#FFFF99'>&nbsp;</td></tr>
@@ -21,7 +21,6 @@
     <tr><td>Arahan: Sila isi maklumat pengguna.</td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr><td align="center">
-    <?=form_error('full_name');?>
     <?php echo form_open('User/addUser'); ?>
     <table width='100%' cellspacing='0' cellpadding='5' border='0'>
     <tr><td>No Kad Pengenalan</td><td align='right'>:</td><td><input type='text' length='100'  maxlength='12' name='No_Kp' /></td></tr>
