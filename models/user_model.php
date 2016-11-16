@@ -5,7 +5,6 @@ class User_model extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-
 	}
 
 	public function view()
@@ -13,6 +12,7 @@ class User_model extends CI_Model
 		/*$this->db->select('*');
 		$this->db->from('user_login');*/
 		$query = $this->db->get('userdetail');
+
 		return $query->result_array();
 	}
 
@@ -35,20 +35,7 @@ class User_model extends CI_Model
 	
 	public function addUser($data)
 	{
-		
-		/* start validation - clarence 16/11 */
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
-		
-		$this->form_validation->set_message('alpha','Invalid Name');
-		//$this->form_validation->set_message('valid_email', 'Invalid Email Address');
-		$this->form_validation->set_message('required', 'Require');
-		/* end validation */
-		/* start validate field - clarence 16/11 */
-		$this->form_validation->set_rules('Nama', 'Full Name', 'required|alpha');
-		//$this->form_validation->set_rules('No_Kp', 'No KP', 'trim|required|max_length[12]');
-		/* end validation field */
-		
+		//echo "ppp";
 		$new_data = array(
    			'No_Kp' => $data['No_Kp'],
    			'Nama' => $data['Nama'],
@@ -61,6 +48,7 @@ class User_model extends CI_Model
 			'NoTel' => $data['noTel']
    			);
    		$this->db->insert("userdetail", $new_data);
+		
 
 	}
 
